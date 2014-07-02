@@ -34,16 +34,16 @@
 
 <p>Deploop is a tool for provisioning, managing and monitoring Apache Hadoop clusters focused in the Lambda Architecture. LA is
 a generic design based on the concepts of Twitter engineer Nathan Marz. This generic architecture was designed addressing common 
-requirements for big data.</p><br>
+requirements for big data.</p>
 
 <p>LA has three major components:</p>
 
 <p>
 <ol>
-	<li>Batch layer: which functionality is managing the master dataset, which is an append-only set of raw data
+	<li><b>Batch layer</b>: which functionality is managing the master dataset, which is an append-only set of raw data
 	, and handle pre-computing arbitrary query functions, called batch views.</li>
-	<li>Serving layer: indexes the batch views so that they can be queried in ad hoc with low latency.</li>
-	<li>Speed layer: accommodates all requests that are subject to low latency requirements. 
+	<li><b>Serving layer</b>: indexes the batch views so that they can be queried in ad hoc with low latency.</li>
+	<li><b>Speed layer</b>: accommodates all requests that are subject to low latency requirements. 
 	Using fast and incremental algorithms, the speed layer deals with recent data only.</li>
 </ol>
 </p>
