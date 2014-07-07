@@ -62,11 +62,19 @@ in order to fulfil the best practices for real production environments.</p>
 
 <p>
 <ol>
-	<li><b>The Deploop engine</b>: </li>
-	<li><b>The Deploop Puppet Enviroments Catalog</b>: </li>
-	<li><b>The Deploop Mcollective Agent</b>: </li>
+	<li><b>The Deploop engine</b>: This is a Ruby application used for take the control of the cluster layers.
+	With this command line tools, you can bootstrap a new cluster layer (batch layer, speed layer, serving
+	layer), query the layer, start, stop o whatever.</li>
+	<li><b>The Deploop Puppet Enviroments Catalog</b>: The configurations of these complex architectures are
+	handle by means of Puppet, a set of Puppet recipes are the core of the architecture.</li>
+	<li><b>The Deploop Mcollective Agent</b>: The orchestration engine Marionette Collective is the other
+	core component in the Deploop architecture. The cluster operations are handle by means of this
+	components and by means of a special MCollective agent: mcollective-deploop-agent plugin.</li>
+	<li><b>The Deploop GUI</b>: This is a Ruby on Rails application in development, it's a front end
+	of the CLI engine.</li>
 </ol>
 </p>
+
 
 
 <h3><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages">
@@ -75,6 +83,30 @@ in order to fulfil the best practices for real production environments.</p>
 <p><img src="images/puppet-mcollective.jpg" alt="Smiley face"></p>
 <p><img src="images/deploop-architecture-schema.jpg" alt="Smiley face"></p>
 <p><img src="images/deploop-scaling.jpg" alt="Smiley face"></p>
+
+
+<h3><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages">
+	<span class="octicon octicon-link"></span></a>Development State</h3>
+
+
+<p>What can I do with Deploop right now?</p>
+<p>You can deploy from scratch a full Hadoop cluster (batch layer) with only one command like this:</p>
+
+<p>
+deploop -f conf/cluster.json --deploy batch
+</p>
+
+<p>You can Shutdown or Startup the Hadoop cluster (batch layer) with a command like this:</p>
+<p>
+deploop --layer batch --stop
+deploop --layer batch --stop
+</p>
+
+<p>You can Enable or Disable Kerberos (Hadoop Security) with a single command:</p>
+<p>
+deploop --layer batch --kerberos
+deploop --layer batch --nokerberos
+</p>
 
     </div>
 
