@@ -98,19 +98,27 @@ in order to fulfil the best practices for real production environments.</p>
 </ul>
 </p>
 
+<p>Deploy a hybrid architecture with something similar to:</p>
+<p>
+<ul>
+	<li>deploop -f conf/cluster.json --deploy batch,speed,bus,serving</li>
+</ul>
+</p>
+
 <p>You can Shutdown or Startup the Hadoop cluster (batch layer) with a command like this:</p>
 <p>
 <ul>
-	<li>deploop --layer batch --stop</li>
-	<li>deploop --layer batch --stop</li>
+	<li>deploop --cluster production --layer batch --stop</li>
+	<li>deploop --cluster production --layer batch --start</li>
+	<li>deploop --cluster othercluster --layer batch,speed --stop</li>
 </ul>
 </p>
 
 <p>You can Enable or Disable Kerberos (Hadoop Security) with a single command:</p>
 <p>
 <ul>
-<li>deploop --layer batch --kerberos</li>
-<li>deploop --layer batch --nokerberos</li>
+<li>deploop --cluster production --layer batch --kerberos</li>
+<li>deploop --cluster production --layer batch --nokerberos</li>
 </ul>
 </p>
 
